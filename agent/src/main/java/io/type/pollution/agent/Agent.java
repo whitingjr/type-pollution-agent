@@ -57,6 +57,7 @@ public class Agent {
                 .with(AgentBuilder.RedefinitionStrategy.RETRANSFORMATION)
                 .with(AgentBuilder.InitializationStrategy.NoOp.INSTANCE)
                 .type(acceptedTypes
+                        .and(not(nameStartsWith("org.jboss.logmanager")))
                         .and(not(nameStartsWith("net.bytebuddy.")))
                         .and(not(nameStartsWith("com.sun")))
                         .and(not(nameStartsWith("io.type.pollution.agent"))))
